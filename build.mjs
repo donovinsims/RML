@@ -53,6 +53,31 @@ const SHELL_CSS = `
   text-decoration: none;
 }
 #mobile-nav a:hover, #mobile-nav a:focus-visible { background: var(--glass-tint, #e7efea); }
+/* Result rack: the cards stretch to the tallest card, so let the copy stack
+   take the remaining height and anchor each action to the bottom. This keeps
+   the "See how we did it" links on one line across the desktop grid and the
+   mobile snap carousel. */
+#results .rack-col > div:last-child { flex: 1 1 auto; }
+#results .rack-col > div:last-child > a:last-child { margin-top: auto; }
+/* Keep the platform icon on the first line when the handle wraps instead of
+   centering it across two lines. */
+#results .rack-col > div:last-child > span.flex { align-items: flex-start; margin-bottom: 4px; }
+#results .rack-col > div:last-child > span.flex > img { margin-top: 3.75px; }
+/* The case-study "read another" strip is three columns from 768px; in that
+   narrow band the account label can wrap. Keep its platform icon on the first
+   line there without touching the single-line rows at wider widths. */
+@media (min-width: 768px) and (max-width: 860px) {
+  [aria-labelledby="more-results"] a > span.flex.items-center { align-items: flex-start; }
+  [aria-labelledby="more-results"] a > span.flex.items-center > img { margin-top: -2px; }
+}
+/* Expand the hit area of standalone links that sit below the 44px target,
+   without moving them or changing their painted size. */
+main > header > a[href="/#reports"],
+main a.eyebrow[href="/"],
+#reports article.case-card > a[href^="/case-studies/"] { position: relative; }
+main > header > a[href="/#reports"]::after,
+main a.eyebrow[href="/"]::after { content: ""; position: absolute; inset: -15px 0; }
+#reports article.case-card > a[href^="/case-studies/"]::after { content: ""; position: absolute; inset: -11px 0; }
 `;
 
 function hash(value) {

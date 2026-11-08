@@ -26,6 +26,31 @@
   text-decoration: none;
 }
 #mobile-nav a:hover, #mobile-nav a:focus-visible { background: var(--glass-tint, #e7efea); }
+/* Result rack: the cards stretch to the tallest card, so let the copy stack
+   take the remaining height and anchor each action to the bottom. This keeps
+   the "See how we did it" links on one line across the desktop grid and the
+   mobile snap carousel. */
+#results .rack-col > div:last-child { flex: 1 1 auto; }
+#results .rack-col > div:last-child > a:last-child { margin-top: auto; }
+/* Keep the platform icon on the first line when the handle wraps instead of
+   centering it across two lines. */
+#results .rack-col > div:last-child > span.flex { align-items: flex-start; margin-bottom: 4px; }
+#results .rack-col > div:last-child > span.flex > img { margin-top: 3.75px; }
+/* The case-study "read another" strip is three columns from 768px; in that
+   narrow band the account label can wrap. Keep its platform icon on the first
+   line there without touching the single-line rows at wider widths. */
+@media (min-width: 768px) and (max-width: 860px) {
+  [aria-labelledby="more-results"] a > span.flex.items-center { align-items: flex-start; }
+  [aria-labelledby="more-results"] a > span.flex.items-center > img { margin-top: -2px; }
+}
+/* Expand the hit area of standalone links that sit below the 44px target,
+   without moving them or changing their painted size. */
+main > header > a[href="/#reports"],
+main a.eyebrow[href="/"],
+#reports article.case-card > a[href^="/case-studies/"] { position: relative; }
+main > header > a[href="/#reports"]::after,
+main a.eyebrow[href="/"]::after { content: ""; position: absolute; inset: -15px 0; }
+#reports article.case-card > a[href^="/case-studies/"]::after { content: ""; position: absolute; inset: -11px 0; }
 </style></head><body class="min-h-full flex flex-col"><div hidden=""><!--$--><!--/$--></div><main class="bg-white"><div class="mx-auto max-w-2xl px-6 py-16"><a class="eyebrow text-muted hover:text-accent" href="/">← Revenue Media Lab</a><h1 class="mt-6 text-3xl font-extrabold tracking-tight text-foreground">Terms of Use</h1><p class="mt-2 text-sm text-muted">Last updated <!-- -->2 September 2026</p><div class="mt-10 leading-relaxed text-foreground [&amp;_a]:text-accent [&amp;_a]:underline [&amp;_h2]:mt-9 [&amp;_h2]:text-lg [&amp;_h2]:font-bold [&amp;_li]:mt-1.5 [&amp;_p]:mt-4 [&amp;_ul]:mt-3 [&amp;_ul]:list-disc [&amp;_ul]:pl-5"><p>These terms apply to revenuemedialab.com. By using the site you accept them. They cover the website only. Any engagement we enter into is governed by its own separate agreement.</p><h2>What this site is</h2><p>A marketing website. It describes what we do, shows examples of past work, and lets you apply to work with us. Submitting the application form is not an agreement, and doesn’t oblige either of us to anything.</p><h2>Results and examples</h2><p>Case studies and figures on this site describe work we did for specific clients under their specific conditions. They are not typical, not guaranteed, and not a projection of what your business would achieve. Nothing here is a promise of income, revenue, or growth.</p><h2>Accuracy</h2><p>We keep this site accurate, but we don’t warrant that it is complete or current, and we may change it at any time. Nothing on it is professional, legal, or financial advice.</p><h2>Our content</h2><p>The writing, design, frameworks, and images on this site belong to us or are used with permission. Client names, logos, and likenesses belong to those clients. You’re welcome to quote or link to what’s here with attribution. Don’t republish it wholesale as your own.</p><h2>Using the site</h2><p>Don’t submit false information, someone else’s personal details, or anything unlawful. Don’t attempt to disrupt the site or access parts of it you haven’t been given access to.</p><h2>Liability</h2><p>The site is provided as is. To the extent the law allows, we aren’t liable for loss arising from your use of it or reliance on anything published here.</p><h2>Contact</h2><p>Questions about these terms:<!-- --> <a href="mailto:jay@revenuemedialab.com">jay@revenuemedialab.com</a>.</p></div></div></main><footer class="border-t border-border bg-background-pale"><div class="mx-auto max-w-6xl px-6 py-10"><p class="max-w-4xl text-xs leading-relaxed text-muted">Results referenced on this page, where present, are specific to the clients named and are not typical or guaranteed for every business. Past performance does not guarantee future results. Nothing on this page is a promise of income, revenue, or growth. Individual results vary based on market, offer, execution, and factors outside our control. If we book a call with you, it may be recorded for quality and training purposes; recordings are not shared outside our team without consent.</p><div class="mt-6 flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"><span>© <!-- -->2026<!-- --> <!-- -->Revenue Media Lab<!-- -->. All rights reserved.</span><span class="flex items-center gap-4"><a class="hover:text-accent" href="/privacy">Privacy</a><a class="hover:text-accent" href="/terms">Terms</a><a href="mailto:jay@revenuemedialab.com" class="hover:text-accent">Contact</a></span></div></div></footer><!--$--><!--/$--><next-route-announcer style="position: absolute;"></next-route-announcer>
 <div id="mobile-nav" hidden>
   <a href="/">Revenue Media Lab home</a>

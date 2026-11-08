@@ -54,10 +54,11 @@ npm run benchmark
 The checked-in build is produced from `capture/` with:
 
 - **7** routes, **393** localized assets, **9,697,279** asset bytes, and **0** build failures.
-- **3/3** local regression tests passing.
-- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. All **21/21** primary screenshots at 640, 1024, and 1180 are exact; page-height delta and horizontal overflow are zero.
+- **5/5** local regression tests passing, including result-card action alignment at 375-1440 px, wrapped attribution icons, the initial mobile carousel state, and the case-study meta strip.
+- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. **20/21** primary screenshots at 640, 1024, and 1180 are exact; the home page at 640 px has a **0.04%** intentional delta from the result-card alignment fix, confined to the three result cards. Page-height delta and horizontal overflow are zero.
 - **9/9** live pipe-geometry checks passing with exact main paths, taps, valve positions, rail, manifold offsets, modes, and stage colors.
-- The home page's static fallbacks are exercised directly: the logo strip starts at scroll position 0 with its fade mask and horizontal access, FAQ accordions open and close, mobile result dots move the carousel, the mobile menu opens and closes, and the application submit guard does not send a request.
+- The home page's static fallbacks are exercised directly: the logo strip starts at scroll position 0 with its fade mask and horizontal access, FAQ accordions open and close, mobile result dots start in sync with the first card and move the carousel, the mobile menu opens and closes, and the application submit guard does not send a request.
+- Deliberate polish beyond the source: the home result rack bottom-aligns the three "See how we did it" actions in both the desktop grid and the mobile carousel, keeps platform icons on the first line when attribution copy wraps, and starts the mobile carousel with the first dot active. The case-study "read another" meta icons get the same first-line alignment in the 768-860 px band, and standalone back/CTA links have larger invisible hit areas without a painted change.
 - Benchmark run: **13/13 selected routes verified** across a deterministic static multipage fixture (**3/3**), a deterministic SPA fixture (**3/3**), and the authorized external site (**7/7**, 21 viewport captures). **39/39 viewport captures** completed with zero warnings; the external route gate is **verified**. The overall benchmark status remains **review** because no authored interaction scenarios were run. Full results are in [docs/benchmark-report.md](docs/benchmark-report.md) and [docs/benchmark-results.json](docs/benchmark-results.json).
 
 ## Rebuild

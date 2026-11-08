@@ -132,3 +132,114 @@ test("home page has the static logo strip and working static controls", async ()
 
   assert.deepEqual(errors, []);
 });
+
+test("home result cards bottom-align their actions on desktop and mobile", async () => {
+  for (const width of [1440, 1180, 1024, 768, 640, 390, 375]) {
+    const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: "reduce" });
+    try {
+      const page = await context.newPage();
+      await page.goto(base, { waitUntil: "networkidle" });
+      await page.evaluate(() => document.fonts.ready);
+
+      const cards = await page.evaluate(() => [...document.querySelectorAll("#results [data-tube]")].map((card) => {
+        const content = card.lastElementChild;
+        const cta = content.querySelector('a[href^="#case-"]');
+        const attribution = [...content.children].find((child) => child.tagName === "SPAN" && child.querySelector(":scope > img"));
+        const image = attribution?.querySelector("img");
+        const text = attribution ? [...attribution.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()) : null;
+        const lines = [];
+        if (text) {
+          const range = document.createRange();
+          range.selectNodeContents(text);
+          for (const rect of range.getClientRects()) lines.push({ top: rect.top, height: rect.height });
+        }
+        const cardRect = card.getBoundingClientRect();
+        const ctaRect = cta.getBoundingClientRect();
+        const imageRect = image?.getBoundingClientRect();
+        return {
+          card: { top: cardRect.top, bottom: cardRect.bottom, height: cardRect.height },
+          cta: { top: ctaRect.top, bottom: ctaRect.bottom, height: ctaRect.height },
+          image: imageRect ? { top: imageRect.top, height: imageRect.height } : null,
+          lines,
+        };
+      }));
+
+      assert.equal(cards.length, 3, `expected three result cards at ${width}px`);
+      const ctaBottoms = cards.map((card) => card.cta.bottom);
+      const spread = Math.max(...ctaBottoms) - Math.min(...ctaBottoms);
+      assert.ok(spread <= 1, `CTA bottoms differ by ${spread.toFixed(2)}px at ${width}px: ${ctaBottoms.map((value) => value.toFixed(1)).join(", ")}`);
+
+      const heights = cards.map((card) => card.card.height);
+      assert.ok(Math.max(...heights) - Math.min(...heights) <= 1, `card heights differ at ${width}px`);
+      for (const card of cards) {
+        assert.ok(card.cta.height >= 44, `CTA tap height ${card.cta.height}px at ${width}px`);
+      }
+
+      const wrapped = cards.filter((card) => card.lines.length > 1);
+      if ([375, 640, 768].includes(width)) {
+        assert.ok(wrapped.length > 0, `expected a wrapped attribution at ${width}px`);
+      }
+      for (const card of cards) {
+        const firstLine = card.lines[0];
+        const lineCenter = firstLine.top + firstLine.height / 2;
+        const iconCenter = card.image.top + card.image.height / 2;
+        assert.ok(
+          Math.abs(lineCenter - iconCenter) <= 1.5,
+          `icon center ${iconCenter.toFixed(2)} is not on the first line center ${lineCenter.toFixed(2)} at ${width}px`,
+        );
+      }
+
+      if (width === 390) {
+        assert.equal(await page.locator('button[aria-label="Show result 1 of 3"]').getAttribute("aria-current"), "true");
+        assert.equal(await page.locator('button[aria-label="Show result 2 of 3"]').getAttribute("aria-current"), null);
+        assert.equal(await page.locator('button[aria-label="Show result 3 of 3"]').getAttribute("aria-current"), null);
+      }
+    } finally {
+      await context.close();
+    }
+  }
+});
+
+test("case-study read-another cards align wrapped meta icons and keep a large back-link target", async () => {
+  const context = await browser.newContext({ viewport: { width: 768, height: 900 }, reducedMotion: "reduce" });
+  try {
+    const page = await context.newPage();
+    await page.goto(`${base}case-studies/ai-founder`, { waitUntil: "networkidle" });
+    await page.evaluate(() => document.fonts.ready);
+
+    const rows = await page.evaluate(() => [...document.querySelectorAll('[aria-labelledby="more-results"] a > span.flex.items-center')].map((row) => {
+      const image = row.querySelector(":scope > img");
+      const walker = document.createTreeWalker(row, NodeFilter.SHOW_TEXT, {
+        acceptNode: (node) => (node.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT),
+      });
+      const text = walker.nextNode();
+      const lines = [];
+      if (text) {
+        const range = document.createRange();
+        range.selectNodeContents(text);
+        for (const rect of range.getClientRects()) lines.push({ top: rect.top, height: rect.height });
+      }
+      const imageRect = image.getBoundingClientRect();
+      return { lines, iconTop: imageRect.top, iconHeight: imageRect.height };
+    }));
+
+    assert.ok(rows.length >= 2, "expected the read-another cards");
+    assert.ok(rows.some((row) => row.lines.length > 1), "expected a wrapped case-study label at 768px");
+    for (const row of rows) {
+      const firstLine = row.lines[0];
+      const lineCenter = firstLine.top + firstLine.height / 2;
+      const iconCenter = row.iconTop + row.iconHeight / 2;
+      assert.ok(Math.abs(lineCenter - iconCenter) <= 1.5, `case meta icon center ${iconCenter.toFixed(2)} is not on the first line center ${lineCenter.toFixed(2)}`);
+    }
+
+    const expandedTarget = await page.evaluate(() => {
+      const link = document.querySelector('main > header > a[href="/#reports"]');
+      const rect = link.getBoundingClientRect();
+      const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top - 8);
+      return hit === link || link.contains(hit);
+    });
+    assert.ok(expandedTarget, "case-study back link should have an expanded hit area");
+  } finally {
+    await context.close();
+  }
+});

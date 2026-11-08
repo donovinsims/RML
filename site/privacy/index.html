@@ -26,6 +26,31 @@
   text-decoration: none;
 }
 #mobile-nav a:hover, #mobile-nav a:focus-visible { background: var(--glass-tint, #e7efea); }
+/* Result rack: the cards stretch to the tallest card, so let the copy stack
+   take the remaining height and anchor each action to the bottom. This keeps
+   the "See how we did it" links on one line across the desktop grid and the
+   mobile snap carousel. */
+#results .rack-col > div:last-child { flex: 1 1 auto; }
+#results .rack-col > div:last-child > a:last-child { margin-top: auto; }
+/* Keep the platform icon on the first line when the handle wraps instead of
+   centering it across two lines. */
+#results .rack-col > div:last-child > span.flex { align-items: flex-start; margin-bottom: 4px; }
+#results .rack-col > div:last-child > span.flex > img { margin-top: 3.75px; }
+/* The case-study "read another" strip is three columns from 768px; in that
+   narrow band the account label can wrap. Keep its platform icon on the first
+   line there without touching the single-line rows at wider widths. */
+@media (min-width: 768px) and (max-width: 860px) {
+  [aria-labelledby="more-results"] a > span.flex.items-center { align-items: flex-start; }
+  [aria-labelledby="more-results"] a > span.flex.items-center > img { margin-top: -2px; }
+}
+/* Expand the hit area of standalone links that sit below the 44px target,
+   without moving them or changing their painted size. */
+main > header > a[href="/#reports"],
+main a.eyebrow[href="/"],
+#reports article.case-card > a[href^="/case-studies/"] { position: relative; }
+main > header > a[href="/#reports"]::after,
+main a.eyebrow[href="/"]::after { content: ""; position: absolute; inset: -15px 0; }
+#reports article.case-card > a[href^="/case-studies/"]::after { content: ""; position: absolute; inset: -11px 0; }
 </style></head><body class="min-h-full flex flex-col"><div hidden=""><!--$--><!--/$--></div><main class="bg-white"><div class="mx-auto max-w-2xl px-6 py-16"><a class="eyebrow text-muted hover:text-accent" href="/">← Revenue Media Lab</a><h1 class="mt-6 text-3xl font-extrabold tracking-tight text-foreground">Privacy Policy</h1><p class="mt-2 text-sm text-muted">Last updated <!-- -->2 September 2026</p><div class="mt-10 leading-relaxed text-foreground [&amp;_a]:text-accent [&amp;_a]:underline [&amp;_h2]:mt-9 [&amp;_h2]:text-lg [&amp;_h2]:font-bold [&amp;_li]:mt-1.5 [&amp;_p]:mt-4 [&amp;_ul]:mt-3 [&amp;_ul]:list-disc [&amp;_ul]:pl-5"><p>Revenue Media Lab operates revenuemedialab.com. This page explains what we collect, why, and how to have it removed. Short version: we collect what you type into our application form, we use it to decide whether we can help you and to contact you about it, and we don’t sell it.</p><h2>What we collect</h2><p>When you submit the application form, we collect what you enter:</p><ul><li>Your name</li><li>Your business email address</li><li>Your phone number</li><li>What you tell us about your business, its revenue range, and your bottleneck</li></ul><p>We don’t ask for payment details anywhere on this site, and we don’t collect any special categories of personal data.</p><h2>Why we collect it</h2><p>To assess whether your business is a fit for our service, to contact you about your application, and to prepare for a call if we book one. If you also opt in to our email list, we use your email to send you that.</p><h2>Who we share it with</h2><p>We use a small number of service providers to run this site and process applications:</p><ul><li><strong>Vercel</strong> — hosting. Serves this site and processes requests to it.</li><li><strong>beehiiv</strong> — email. Stores your address if you subscribe, and sends the emails.</li><li><strong>Calendly</strong> — scheduling. Used only if you book a call, and subject to Calendly’s own privacy policy.</li><li><strong>Automation and workflow tools</strong> — used to route applications to our team so we can respond.</li></ul><p>We do not sell your personal information, and we do not share it with advertisers.</p><h2>Cookies and tracking</h2><p>We do not currently run any analytics, advertising pixels, or third-party tracking scripts on this site. If that changes, we’ll update this page. Pages you reach through third parties, such as a Calendly booking page, are governed by their policies.</p><h2>How long we keep it</h2><p>We keep applications for as long as we may reasonably need them for the enquiry, and email subscriptions until you unsubscribe. Every email we send has an unsubscribe link.</p><h2>Your rights</h2><p>Depending on where you live, you may have the right to access, correct, export, or delete the personal information we hold about you, and to object to how we use it. Email us and we’ll action it.</p><h2>Contact</h2><p>For anything on this page, including deletion requests, email<!-- --> <a href="mailto:jay@revenuemedialab.com">jay@revenuemedialab.com</a>.</p></div></div></main><footer class="border-t border-border bg-background-pale"><div class="mx-auto max-w-6xl px-6 py-10"><p class="max-w-4xl text-xs leading-relaxed text-muted">Results referenced on this page, where present, are specific to the clients named and are not typical or guaranteed for every business. Past performance does not guarantee future results. Nothing on this page is a promise of income, revenue, or growth. Individual results vary based on market, offer, execution, and factors outside our control. If we book a call with you, it may be recorded for quality and training purposes; recordings are not shared outside our team without consent.</p><div class="mt-6 flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"><span>© <!-- -->2026<!-- --> <!-- -->Revenue Media Lab<!-- -->. All rights reserved.</span><span class="flex items-center gap-4"><a class="hover:text-accent" href="/privacy">Privacy</a><a class="hover:text-accent" href="/terms">Terms</a><a href="mailto:jay@revenuemedialab.com" class="hover:text-accent">Contact</a></span></div></div></footer><!--$--><!--/$--><next-route-announcer style="position: absolute;"></next-route-announcer>
 <div id="mobile-nav" hidden>
   <a href="/">Revenue Media Lab home</a>

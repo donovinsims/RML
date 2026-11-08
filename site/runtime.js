@@ -85,6 +85,20 @@ function setupResultDots() {
     });
   };
 
+  const nearestIndex = () => {
+    const middle = track.scrollLeft + track.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.offsetLeft + card.clientWidth / 2 - middle);
+      if (distance < best) {
+        best = distance;
+        nearest = index;
+      }
+    });
+    return nearest;
+  };
+
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => select(index, true));
   });
@@ -92,20 +106,10 @@ function setupResultDots() {
   let frame = 0;
   track.addEventListener("scroll", () => {
     cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => {
-      const middle = track.scrollLeft + track.clientWidth / 2;
-      let nearest = 0;
-      let best = Infinity;
-      cards.forEach((card, index) => {
-        const distance = Math.abs(card.offsetLeft + card.clientWidth / 2 - middle);
-        if (distance < best) {
-          best = distance;
-          nearest = index;
-        }
-      });
-      select(nearest, false);
-    });
+    frame = requestAnimationFrame(() => select(nearestIndex(), false));
   }, { passive: true });
+
+  select(nearestIndex(), false);
 }
 
 function setupFormGuard() {
