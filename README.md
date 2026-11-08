@@ -62,7 +62,7 @@ The checked-in build is produced from `capture/` with:
 - Deliberate polish beyond the source: the home result rack bottom-aligns the three "See how we did it" actions in both the desktop grid and the mobile carousel, keeps platform icons on the first line when attribution copy wraps, and starts the mobile carousel with the first dot active. The case-study "read another" meta icons get the same first-line alignment in the 768-860 px band without changing the meta row's height, and standalone back/CTA links have larger invisible hit areas without a painted change.
 - Benchmark run: **13/13 selected routes verified** across a deterministic static multipage fixture (**3/3**), a deterministic SPA fixture (**3/3**), and the authorized external site (**7/7**, 21 viewport captures). **39/39 viewport captures** completed with zero warnings; the external route gate is **verified**. The overall benchmark status remains **review** because no authored interaction scenarios were run. Full results are in [docs/benchmark-report.md](docs/benchmark-report.md) and [docs/benchmark-results.json](docs/benchmark-results.json).
 
-`npm run verify:claims` compares these verification counts with `.audit/alignment/test.log`, `.audit/responsive/report.json`, `.audit/pipe-geometry/report.json`, and `build-report.json`, and exits non-zero on drift.
+`npm test` writes `.audit/alignment/test.log`; `npm run verify:claims` compares these verification counts with that log, `.audit/responsive/report.json`, `.audit/pipe-geometry/report.json`, and `build-report.json`, and exits non-zero on drift.
 
 ## Rebuild
 

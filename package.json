@@ -10,7 +10,7 @@
   "scripts": {
     "build": "node build.mjs",
     "serve": "node serve.mjs",
-    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test": "node scripts/run-tests.mjs",
     "audit": "node scripts/audit-all.mjs",
     "verify:claims": "node scripts/verify-claims.mjs",
     "benchmark": "node benchmark/run.mjs"

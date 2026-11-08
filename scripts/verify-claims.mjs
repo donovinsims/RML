@@ -10,7 +10,7 @@ async function read(path) {
   try {
     return await readFile(join(root, path), "utf8");
   } catch {
-    failures.push(`Missing measured artifact: ${path}. Run npm test and npm run audit first.`);
+    failures.push(`Missing measured artifact: ${path}. Run npm test first (it writes the test log), then npm run audit.`);
     return null;
   }
 }
