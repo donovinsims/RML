@@ -40,6 +40,7 @@ const server = spawn(process.execPath, ["serve.mjs"], {
 
 let auditExit = 1;
 let geometryExit = 1;
+let claimsExit = 1;
 try {
   await waitForServer();
   auditExit = await run("scripts/audit-responsive.mjs", [
@@ -52,9 +53,10 @@ try {
     "--clone", cloneUrl,
     "--out", ".audit/pipe-geometry",
   ]);
+  claimsExit = await run("scripts/verify-claims.mjs", []);
 } finally {
   server.kill("SIGTERM");
 }
 
-console.log(JSON.stringify({ auditExit, geometryExit, cloneUrl }, null, 2));
-process.exitCode = auditExit || geometryExit ? 1 : 0;
+console.log(JSON.stringify({ auditExit, geometryExit, claimsExit, cloneUrl }, null, 2));
+process.exitCode = auditExit || geometryExit || claimsExit ? 1 : 0;

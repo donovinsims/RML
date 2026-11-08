@@ -141,7 +141,7 @@ The live comparison covers **390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440
 | 1180 | row | 64 | 2993 | 44 | 0 | exact | exact | exact |
 | 1440 | row | 124 | 3097 | 44 | 0 | exact | exact | exact |
 
-The final responsive audit covered **11 widths × 7 routes = 77 checks**, with **77/77 pass**, **20/21 primary screenshots exact**, zero horizontal overflow, zero broken images, and matching intended internal scrollers. The only non-zero primary comparison is the home page at 640 px (**0.0412%**, 2,642 changed pixels, confined to the three result cards); home at 1024 px and 1180 px remains exact. All primary page-height deltas are zero; across all 77 checks the maximum is 1 px (software-founder at 768 px, from the case-study meta-icon alignment), within the 2 px tolerance.
+The final responsive audit covered **11 widths × 7 routes = 77 checks**, with **77/77 pass**, **20/21 primary screenshots exact**, zero horizontal overflow, zero broken images, and matching intended internal scrollers. The only non-zero primary comparison is the home page at 640 px (**0.0412%**, 2,642 changed pixels, confined to the three result cards); home at 1024 px and 1180 px remains exact. All primary page-height deltas are zero; across all 77 checks the maximum page-height delta is 0 px, including software-founder at 768 px.
 
 ### 3. Static controls were inert and the logo strip could freeze mid-scroll
 
@@ -214,7 +214,7 @@ Local, ignored:
 | --- | --- |
 | Build | 7 pages, 393 assets, 9,697,279 bytes, 0 failures |
 | Local tests | **5/5 pass** |
-| Responsive audit | **77/77 pass**; 20/21 primary screenshots exact (home 640: 0.0412% intentional result-card delta); max page-height delta 1 px, zero horizontal overflow |
+| Responsive audit | **77/77 pass**; 20/21 primary screenshots exact (home 640: 0.0412% intentional result-card delta); max page-height delta 0 px, zero horizontal overflow |
 | Pipe geometry | **9/9 widths exact** |
 | Benchmark route gate | **13/13 selected routes verified** |
 | Benchmark captures | **39/39 viewports**, 0 warnings, 0 partial |

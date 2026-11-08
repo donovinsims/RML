@@ -2,49 +2,49 @@
   "kind": "rml-reconstruction",
   "sourceManifest": "capture/evidence/routes.json",
   "sourceOrigin": "https://revenuemedialab.com",
-  "generatedAt": "2026-11-08T06:40:37.205Z",
-  "durationMs": 44167,
+  "generatedAt": "2026-11-08T09:49:20.733Z",
+  "durationMs": 52412,
   "pages": [
     {
       "route": "/",
       "file": "index.html",
-      "bytes": 74073,
+      "bytes": 74239,
       "assets": 59
     },
     {
       "route": "/case-studies/advisory-ceo",
       "file": "case-studies/advisory-ceo/index.html",
-      "bytes": 44868,
+      "bytes": 45034,
       "assets": 81
     },
     {
       "route": "/case-studies/ai-founder",
       "file": "case-studies/ai-founder/index.html",
-      "bytes": 32468,
+      "bytes": 32634,
       "assets": 89
     },
     {
       "route": "/case-studies/sales-academy-founder",
       "file": "case-studies/sales-academy-founder/index.html",
-      "bytes": 40978,
+      "bytes": 41144,
       "assets": 89
     },
     {
       "route": "/case-studies/software-founder",
       "file": "case-studies/software-founder/index.html",
-      "bytes": 31910,
+      "bytes": 32076,
       "assets": 97
     },
     {
       "route": "/privacy",
       "file": "privacy/index.html",
-      "bytes": 9966,
+      "bytes": 10132,
       "assets": 9
     },
     {
       "route": "/terms",
       "file": "terms/index.html",
-      "bytes": 9235,
+      "bytes": 9401,
       "assets": 9
     }
   ],

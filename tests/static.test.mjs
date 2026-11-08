@@ -220,7 +220,7 @@ test("case-study read-another cards align wrapped meta icons and keep a large ba
         for (const rect of range.getClientRects()) lines.push({ top: rect.top, height: rect.height });
       }
       const imageRect = image.getBoundingClientRect();
-      return { lines, iconTop: imageRect.top, iconHeight: imageRect.height };
+      return { lines, iconTop: imageRect.top, iconHeight: imageRect.height, rowHeight: row.getBoundingClientRect().height };
     }));
 
     assert.ok(rows.length >= 2, "expected the read-another cards");
@@ -230,6 +230,7 @@ test("case-study read-another cards align wrapped meta icons and keep a large ba
       const lineCenter = firstLine.top + firstLine.height / 2;
       const iconCenter = row.iconTop + row.iconHeight / 2;
       assert.ok(Math.abs(lineCenter - iconCenter) <= 1.5, `case meta icon center ${iconCenter.toFixed(2)} is not on the first line center ${lineCenter.toFixed(2)}`);
+      assert.ok(row.rowHeight >= row.iconHeight, `case meta row height ${row.rowHeight}px is shorter than its ${row.iconHeight}px icon`);
     }
 
     const expandedTarget = await page.evaluate(() => {

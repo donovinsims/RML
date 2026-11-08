@@ -20,7 +20,8 @@ Set `PORT` to serve on another port. The checked-in `site/` is already built and
 npm run build       # rebuild site/ from capture/evidence/routes.json
 npm run serve       # serve site/ on http://127.0.0.1:4310
 npm test            # pipe geometry, structural matching, static controls, and alignment
-npm run audit       # live 11-width responsive audit plus 9-width pipe comparison
+npm run audit       # live 11-width audit, 9-width pipe comparison, and claims check
+npm run verify:claims # fail if README verification counts drift from .audit artifacts
 npm run benchmark   # fixture and authorized-source discovery/capture/verification
 ```
 
@@ -55,11 +56,13 @@ The checked-in build is produced from `capture/` with:
 
 - **7** routes, **393** localized assets, **9,697,279** asset bytes, and **0** build failures.
 - **5/5** local regression tests passing, including result-card action alignment at 375-1440 px, wrapped attribution icons, 44 px tap height, the initial mobile carousel state, the case-study meta strip, and the expanded back-link hit area.
-- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. **20/21** primary screenshots are exact; the only non-zero primary comparison is the home page at 640 px (**0.0412%**, 2,642 pixels, confined to the three result cards). Home at 1024 px and 1180 px remains exact because the card heights already matched and the attribution rows did not wrap. All primary page-height deltas are zero, and horizontal overflow is zero across all 77 checks; the maximum page-height delta across the full sweep is 1 px (software-founder at 768 px, from the case-study meta-icon alignment), within the audit's 2 px tolerance.
+- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. **20/21** primary screenshots are exact; the only non-zero primary comparison is the home page at 640 px (**0.0412%**, 2,642 pixels, confined to the three result cards). Home at 1024 px and 1180 px remains exact because the card heights already matched and the attribution rows did not wrap. All primary page-height deltas are zero, and horizontal overflow is zero across all 77 checks; the maximum page-height delta across the full sweep is 0 px, including software-founder at 768 px.
 - **9/9** live pipe-geometry checks passing with exact main paths, taps, valve positions, rail, manifold offsets, modes, and stage colors.
 - The home page's static fallbacks are exercised directly: the logo strip starts at scroll position 0 with its fade mask and horizontal access, FAQ accordions open and close, mobile result dots start in sync with the first card and move the carousel, the mobile menu opens and closes, and the application submit guard does not send a request.
-- Deliberate polish beyond the source: the home result rack bottom-aligns the three "See how we did it" actions in both the desktop grid and the mobile carousel, keeps platform icons on the first line when attribution copy wraps, and starts the mobile carousel with the first dot active. The case-study "read another" meta icons get the same first-line alignment in the 768-860 px band, and standalone back/CTA links have larger invisible hit areas without a painted change.
+- Deliberate polish beyond the source: the home result rack bottom-aligns the three "See how we did it" actions in both the desktop grid and the mobile carousel, keeps platform icons on the first line when attribution copy wraps, and starts the mobile carousel with the first dot active. The case-study "read another" meta icons get the same first-line alignment in the 768-860 px band without changing the meta row's height, and standalone back/CTA links have larger invisible hit areas without a painted change.
 - Benchmark run: **13/13 selected routes verified** across a deterministic static multipage fixture (**3/3**), a deterministic SPA fixture (**3/3**), and the authorized external site (**7/7**, 21 viewport captures). **39/39 viewport captures** completed with zero warnings; the external route gate is **verified**. The overall benchmark status remains **review** because no authored interaction scenarios were run. Full results are in [docs/benchmark-report.md](docs/benchmark-report.md) and [docs/benchmark-results.json](docs/benchmark-results.json).
+
+`npm run verify:claims` compares these verification counts with `.audit/alignment/test.log`, `.audit/responsive/report.json`, `.audit/pipe-geometry/report.json`, and `build-report.json`, and exits non-zero on drift.
 
 ## Rebuild
 

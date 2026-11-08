@@ -38,10 +38,12 @@
 #results .rack-col > div:last-child > span.flex > img { margin-top: 3.75px; }
 /* The case-study "read another" strip is three columns from 768px; in that
    narrow band the account label can wrap. Keep its platform icon on the first
-   line there without touching the single-line rows at wider widths. */
+   line there without touching the single-line rows at wider widths. Offset
+   with relative positioning rather than a negative margin so the meta row
+   keeps its natural height (and the page its source height) at 768px. */
 @media (min-width: 768px) and (max-width: 860px) {
   [aria-labelledby="more-results"] a > span.flex.items-center { align-items: flex-start; }
-  [aria-labelledby="more-results"] a > span.flex.items-center > img { margin-top: -2px; }
+  [aria-labelledby="more-results"] a > span.flex.items-center > img { position: relative; top: -2px; }
 }
 /* Expand the hit area of standalone links that sit below the 44px target,
    without moving them or changing their painted size. */
