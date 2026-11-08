@@ -19,7 +19,7 @@ Set `PORT` to serve on another port. The checked-in `site/` is already built and
 ```bash
 npm run build       # rebuild site/ from capture/evidence/routes.json
 npm run serve       # serve site/ on http://127.0.0.1:4310
-npm test            # pipe geometry, structural matching, and static controls
+npm test            # pipe geometry, structural matching, static controls, and alignment
 npm run audit       # live 11-width responsive audit plus 9-width pipe comparison
 npm run benchmark   # fixture and authorized-source discovery/capture/verification
 ```
@@ -45,7 +45,7 @@ npm run benchmark
 - `lib/` — the vendored browser capture, screenshot comparison, discovery, and verification helpers used by local scripts.
 - `benchmark/` — standalone benchmark runner, deterministic multipage/SPA fixture, and the vendored workflow under `benchmark/workflow/`.
 - `scripts/` — responsive audit and live pipe-geometry comparison.
-- `tests/` — golden geometry, structural matcher, and static-fallback regression tests.
+- `tests/` — golden geometry, structural matcher, static-fallback, and alignment regression tests.
 - `docs/` — benchmark report and compact measured results.
 - `build-report.json` — page, asset, and failure counts from the checked-in build.
 
@@ -54,8 +54,8 @@ npm run benchmark
 The checked-in build is produced from `capture/` with:
 
 - **7** routes, **393** localized assets, **9,697,279** asset bytes, and **0** build failures.
-- **5/5** local regression tests passing, including result-card action alignment at 375-1440 px, wrapped attribution icons, the initial mobile carousel state, and the case-study meta strip.
-- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. **20/21** primary screenshots at 640, 1024, and 1180 are exact; the home page at 640 px has a **0.04%** intentional delta from the result-card alignment fix, confined to the three result cards. Page-height delta and horizontal overflow are zero.
+- **5/5** local regression tests passing, including result-card action alignment at 375-1440 px, wrapped attribution icons, 44 px tap height, the initial mobile carousel state, the case-study meta strip, and the expanded back-link hit area.
+- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. **20/21** primary screenshots are exact; the only non-zero primary comparison is the home page at 640 px (**0.0412%**, 2,642 pixels, confined to the three result cards). Home at 1024 px and 1180 px remains exact because the card heights already matched and the attribution rows did not wrap. All primary page-height deltas are zero, and horizontal overflow is zero across all 77 checks; the maximum page-height delta across the full sweep is 1 px (software-founder at 768 px, from the case-study meta-icon alignment), within the audit's 2 px tolerance.
 - **9/9** live pipe-geometry checks passing with exact main paths, taps, valve positions, rail, manifold offsets, modes, and stage colors.
 - The home page's static fallbacks are exercised directly: the logo strip starts at scroll position 0 with its fade mask and horizontal access, FAQ accordions open and close, mobile result dots start in sync with the first card and move the carousel, the mobile menu opens and closes, and the application submit guard does not send a request.
 - Deliberate polish beyond the source: the home result rack bottom-aligns the three "See how we did it" actions in both the desktop grid and the mobile carousel, keeps platform icons on the first line when attribution copy wraps, and starts the mobile carousel with the first dot active. The case-study "read another" meta icons get the same first-line alignment in the 768-860 px band, and standalone back/CTA links have larger invisible hit areas without a painted change.
