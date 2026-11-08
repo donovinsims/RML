@@ -119,9 +119,9 @@ The SPA routes remain classified as `spa` only when history is their only discov
 
 ### 1. The build and audits depended on an external reconstruction tree
 
-The moved project initially referenced the previous capture and toolkit locations. The build now defaults to `capture/evidence/routes.json`, the source manifest is recorded relative to the project, the audit starts the local server itself, and the benchmark writes only under this repository.
+The moved project initially referenced the previous capture and workflow locations. The build now defaults to `capture/evidence/routes.json`, the source manifest is recorded relative to the project, the audit starts the local server itself, and the benchmark writes only under this repository.
 
-Result: `npm run build`, `npm test`, `npm run audit`, and `npm run benchmark` all run from `/Users/forex/RML` without reading the old tree. The committed build reports `sourceManifest: "capture/evidence/routes.json"`.
+Result: `npm run build`, `npm test`, `npm run audit`, and `npm run benchmark` all run from the repository root without reading the old tree. The committed build reports `sourceManifest: "capture/evidence/routes.json"`.
 
 ### 2. The pipe was frozen from three screenshots
 
