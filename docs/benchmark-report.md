@@ -14,13 +14,13 @@ Final measured result:
 
 | Leg | Source | Discovered | Captured | Verified | Route gate | Wall clock |
 | --- | --- | ---: | ---: | ---: | --- | ---: |
-| Static multipage fixture | Two independent local servers | 18 | 3 routes, 9 viewports | **3/3** | **verified** | 52.7 s |
-| SPA fixture | Two independent local servers | 18 | 3 routes, 9 viewports | **3/3** | **verified** | 49.0 s |
-| Authorized large responsive | `https://revenuemedialab.com/` | 7 | 7 routes, 21 viewports | **7/7** | **verified** | 175.1 s |
+| Static multipage fixture | Two independent local servers | 18 | 3 routes, 9 viewports | **3/3** | **verified** | 46.6 s |
+| SPA fixture | Two independent local servers | 18 | 3 routes, 9 viewports | **3/3** | **verified** | 45.5 s |
+| Authorized large responsive | `https://revenuemedialab.com/` | 7 | 7 routes, 21 viewports | **7/7** | **verified** | 164.8 s |
 
 Across all three legs: **39/39 viewport captures completed** with **0 partial**, **0 failed**, **0 warnings**, **0 pending images**, **0 broken images**, and **0 stabilization timeouts**. **13/13 selected routes verified**, with **0 failed** and **0 blocked**. The top-level status is **review** for every leg only because no authored interaction scenario suite was run (`scenarioGate: not-run`); the route gate itself is **verified**.
 
-The external leg's 21 visual comparisons all passed: 20 were pixel-exact and one mobile screenshot had a `0.000070` change ratio (310 changed pixels). All 21 geometry comparisons passed. The previous lone review from an empty-text structural wrapper is closed: the matcher now records exact empty structural matches as measured, and a regression test covers it. The external site therefore moved from **6/7 verified, 1 review** to **7/7 verified, 0 review**.
+The external leg's 21 visual comparisons all passed: 19 were pixel-exact, `/` mobile had a `0.000070` change ratio (310 changed pixels), and `/case-studies/ai-founder` desktop had a `0.002659` ratio (40,409 changed pixels). Both non-zero ratios are below the 0.005 pass threshold. All 21 geometry comparisons passed. The previous lone review from an empty-text structural wrapper is closed: the matcher now records exact empty structural matches as measured, and a regression test covers it. The external site therefore moved from **6/7 verified, 1 review** to **7/7 verified, 0 review**.
 
 ## Authorization and scope
 
@@ -70,9 +70,9 @@ npm run benchmark
 
 | Phase | Result | Time |
 | --- | --- | ---: |
-| Discovery | 7 discovered, 7 selected, 0 failed, 0 excluded, 0 unresolved, 0 truncated | 7.1 s |
-| Capture | 7/7 routes captured, 21/21 viewports, 0 partial, 0 failed, 0 warnings | 78.7 s |
-| Verification | 7/7 verified, 0 review, 0 failed, 0 blocked | 89.2 s |
+| Discovery | 7 discovered, 7 selected, 0 failed, 0 excluded, 0 unresolved, 0 truncated | 7.6 s |
+| Capture | 7/7 routes captured, 21/21 viewports, 0 partial, 0 failed, 0 warnings | 75.2 s |
+| Verification | 7/7 verified, 0 review, 0 failed, 0 blocked | 82.0 s |
 
 Route types were one `home`, four `nested`, and two `page`; there were **zero SPA-only routes**, confirming that same-URL Next.js hydration was not misclassified. All seven direct loads, internal-link checks, and history checks passed. Mobile navigation passed on the five routes that expose it; the two legal pages correctly reported `not-applicable`.
 
@@ -82,7 +82,7 @@ Verification details:
 - Internal links: **7/7 pass**, with no broken or source-origin-escaped links.
 - History: **7/7 pass**.
 - Mobile navigation: **5/5 applicable pass**.
-- Visual: **21/21 pass**; 20 exact, one mobile ratio of `0.000070`.
+- Visual: **21/21 pass**; 19 exact, `/` mobile `0.000070`, and `/case-studies/ai-founder` desktop `0.002659`.
 - Geometry: **21/21 pass**; no review sections.
 
 The external homepage's full-page heights were identical at every audited width, including 7,614 px at 1440, 8,435 px at 768, and 11,349 px at 390.
@@ -94,7 +94,7 @@ The fixture discovery produced 18 routes: 17 selected and one intentional HTTP 4
 - Capture: **3/3** routes, **9/9** viewports, zero warnings.
 - Verification: **3/3** routes verified, zero failed or blocked.
 - Route gate: **verified**.
-- Wall clock: 52.7 s (discovery 6.9 s, capture 19.0 s, verification 26.7 s).
+- Wall clock: 46.6 s (discovery 6.6 s, capture 17.7 s, verification 22.3 s).
 
 This leg exercises static multipage discovery, sitemap and rendered-link reconciliation, dropdown navigation, a desktop/mobile menu, and exact source/clone comparison independent of the external site.
 
@@ -111,7 +111,7 @@ The fixture contains two genuine SPA-history routes:
 - Capture: **3/3** routes, **9/9** viewports, zero warnings.
 - Verification: **3/3** routes verified, including direct deep links, links, mobile navigation, history, visual, and geometry.
 - Route gate: **verified**.
-- Wall clock: 49.0 s (discovery 6.7 s, capture 17.8 s, verification 24.4 s).
+- Wall clock: 45.5 s (discovery 6.7 s, capture 17.3 s, verification 21.4 s).
 
 The SPA routes remain classified as `spa` only when history is their only discovery source. The external site, which also hydrates and changes same-URL history state, remains correctly classified as static multipage with no false SPA labels.
 

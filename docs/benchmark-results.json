@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-08T04:28:21.770Z",
+  "generatedAt": "2026-11-08T04:46:15.745Z",
   "browser": "Chromium via Playwright 1.61.1",
   "cases": [
     {
       "name": "static-multipage",
-      "sourceUrl": "http://127.0.0.1:59969/",
-      "cloneUrl": "http://127.0.0.1:59970/",
+      "sourceUrl": "http://127.0.0.1:64401/",
+      "cloneUrl": "http://127.0.0.1:64402/",
       "out": ".benchmark/static-multipage",
       "selected": [
         "/",
@@ -13,10 +13,10 @@
         "/services"
       ],
       "timingsMs": {
-        "discovery": 6941,
-        "capture": 18991,
-        "verification": 26727,
-        "total": 52659
+        "discovery": 6640,
+        "capture": 17690,
+        "verification": 22279,
+        "total": 46609
       },
       "discovery": {
         "discovered": 18,
@@ -31,7 +31,7 @@
         "sitemapUrls": 6,
         "truncated": false,
         "limitsHit": [],
-        "durationMs": 6935,
+        "durationMs": 6635,
         "routeTypes": [
           {
             "type": "home",
@@ -284,8 +284,8 @@
     },
     {
       "name": "spa",
-      "sourceUrl": "http://127.0.0.1:60181/",
-      "cloneUrl": "http://127.0.0.1:60182/",
+      "sourceUrl": "http://127.0.0.1:64832/",
+      "cloneUrl": "http://127.0.0.1:64833/",
       "out": ".benchmark/spa",
       "selected": [
         "/app",
@@ -293,10 +293,10 @@
         "/app/settings"
       ],
       "timingsMs": {
-        "discovery": 6697,
-        "capture": 17846,
-        "verification": 24438,
-        "total": 48981
+        "discovery": 6674,
+        "capture": 17349,
+        "verification": 21448,
+        "total": 45471
       },
       "discovery": {
         "discovered": 18,
@@ -311,7 +311,7 @@
         "sitemapUrls": 6,
         "truncated": false,
         "limitsHit": [],
-        "durationMs": 6685,
+        "durationMs": 6668,
         "routeTypes": [
           {
             "type": "home",
@@ -577,10 +577,10 @@
         "/terms"
       ],
       "timingsMs": {
-        "discovery": 7145,
-        "capture": 78692,
-        "verification": 89234,
-        "total": 175071
+        "discovery": 7641,
+        "capture": 75181,
+        "verification": 81981,
+        "total": 164803
       },
       "discovery": {
         "discovered": 7,
@@ -595,7 +595,7 @@
         "sitemapUrls": 0,
         "truncated": false,
         "limitsHit": [],
-        "durationMs": 7137,
+        "durationMs": 7639,
         "routeTypes": [
           {
             "type": "home",
