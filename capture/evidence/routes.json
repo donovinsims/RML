@@ -1,0 +1,1585 @@
+{
+  "version": 1,
+  "kind": "rml-route-manifest",
+  "site": {
+    "sourceUrl": "https://revenuemedialab.com/",
+    "origin": "https://revenuemedialab.com",
+    "mode": "exact",
+    "discoveredAt": "2026-11-07T21:56:12.044Z"
+  },
+  "config": {
+    "discovery": {
+      "maxPages": 15,
+      "maxDepth": 2,
+      "concurrency": 3,
+      "requestDelayMs": 250,
+      "timeoutMs": 30000,
+      "retries": 1,
+      "include": [],
+      "exclude": [],
+      "sameOrigin": true,
+      "render": true,
+      "revealNavigation": true,
+      "maxNavigationInteractions": 8,
+      "maxLinksPerPage": 300,
+      "maxQueryVariants": 12,
+      "maxSitemaps": 10,
+      "maxDurationMs": 180000,
+      "userAgent": "RMLBenchmark/1.0",
+      "respectRobots": true,
+      "pagination": {
+        "maxPages": 5
+      }
+    },
+    "capture": {
+      "viewports": {
+        "desktop": {
+          "width": 1440,
+          "height": 1000
+        },
+        "tablet": {
+          "width": 768,
+          "height": 1000
+        },
+        "mobile": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "breakpoints": {
+        "enabled": true,
+        "candidates": [
+          320,
+          360,
+          390,
+          414,
+          480,
+          600,
+          640,
+          768,
+          820,
+          900,
+          1024,
+          1180,
+          1280,
+          1440
+        ],
+        "timeoutMs": 60000
+      },
+      "interactionStates": "pseudo",
+      "maxStates": 80,
+      "timeoutMs": 30000,
+      "maxRoutes": 50,
+      "scrollForLazy": true
+    },
+    "verification": {
+      "thresholds": {
+        "pass": 0.005,
+        "review": 0.02
+      },
+      "geometry": {
+        "control": 1,
+        "section": 2
+      },
+      "maxImageBytes": 536870912,
+      "maxImageTile": 64
+    }
+  },
+  "robots": {
+    "url": "https://revenuemedialab.com/robots.txt",
+    "available": false,
+    "status": 404,
+    "error": null,
+    "groupCount": 0,
+    "crawlDelay": null,
+    "declaredSitemaps": [],
+    "respectRobots": true
+  },
+  "sitemaps": {
+    "documents": [
+      {
+        "url": "https://revenuemedialab.com/sitemap.xml",
+        "kind": "unknown",
+        "status": "error",
+        "count": 0,
+        "error": "HTTP 404 for https://revenuemedialab.com/sitemap.xml."
+      },
+      {
+        "url": "https://revenuemedialab.com/sitemap_index.xml",
+        "kind": "unknown",
+        "status": "error",
+        "count": 0,
+        "error": "HTTP 404 for https://revenuemedialab.com/sitemap_index.xml."
+      }
+    ],
+    "failures": [
+      {
+        "url": "https://revenuemedialab.com/sitemap.xml",
+        "error": "HTTP 404 for https://revenuemedialab.com/sitemap.xml."
+      },
+      {
+        "url": "https://revenuemedialab.com/sitemap_index.xml",
+        "error": "HTTP 404 for https://revenuemedialab.com/sitemap_index.xml."
+      }
+    ],
+    "truncated": false
+  },
+  "routes": [
+    {
+      "sourceUrl": "https://revenuemedialab.com/",
+      "canonicalUrl": "https://revenuemedialab.com/",
+      "localRoute": "/",
+      "title": "Revenue Media Lab | Founder content for X and LinkedIn",
+      "routeType": "home",
+      "discoverySources": [
+        "start"
+      ],
+      "depth": 0,
+      "parentRoutes": [
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/",
+          "url": "https://revenuemedialab.com/",
+          "label": "REVENUE MEDIA LAB",
+          "region": "header",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "review",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "56057ddefb45cd96a6c18d9830f0b1a2",
+      "interactiveStates": [
+        {
+          "control": {
+            "tag": "button",
+            "label": "Is this an agency?",
+            "id": "_R_b5flb_-q0",
+            "ariaControls": "_R_b5flb_-a0",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "How much of our founder's time does this take?",
+            "id": "_R_b5flb_-q1",
+            "ariaControls": "_R_b5flb_-a1",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "How fast do posts go live?",
+            "id": "_R_b5flb_-q2",
+            "ariaControls": "_R_b5flb_-a2",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "Who is this a good fit for?",
+            "id": "_R_b5flb_-q3",
+            "ariaControls": "_R_b5flb_-a3",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "Who is this not for?",
+            "id": "_R_b5flb_-q4",
+            "ariaControls": "_R_b5flb_-a4",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "Can you write for other executives too?",
+            "id": "_R_b5flb_-q5",
+            "ariaControls": "_R_b5flb_-a5",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        },
+        {
+          "control": {
+            "tag": "button",
+            "label": "Do you do video?",
+            "id": "_R_b5flb_-q6",
+            "ariaControls": "_R_b5flb_-a6",
+            "ariaExpandedBefore": "false",
+            "dataNav": null
+          },
+          "beforeUrl": "https://revenuemedialab.com/",
+          "afterUrl": "https://revenuemedialab.com/",
+          "observedRoutes": [],
+          "note": "discovery: bounded side-effect-free disclosure interaction"
+        }
+      ],
+      "confidence": "medium",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "YOUR FRACTIONAL CONTENT DEPARTMENT FOR AND",
+        "FOUNDER LED CONTENT. WITHOUT THE FOUNDER BOTTLENECK.",
+        "One hour of your founder's time.",
+        "We work out what your founder should be known for.",
+        "Posts that sound like your founder wrote them.",
+        "Every day on X and LinkedIn.",
+        "WHAT COMES OUT THE OTHER END.",
+        "See exactly how we got these results.",
+        "How a founder with an $80M exit passed his 3-month LinkedIn goal in month 1.",
+        "How we got a busy founder 3.4x more posts over 100K impressions, without a single interview.",
+        "26 million impressions for a busy CEO, without ever interviewing them.",
+        "How the founder of the largest women's sales academy hit 20K LinkedIn followers in under 6 months.",
+        "WANT TO BE THE NEXT CASE STUDY?Let's chat.",
+        "Your details",
+        "Questions founders ask before applying",
+        "Is this an agency?",
+        "How much of our founder's time does this take?",
+        "How fast do posts go live?",
+        "Who is this a good fit for?",
+        "Who is this not for?",
+        "Can you write for other executives too?",
+        "Do you do video?",
+        "YOU ALREADY HAVE THE STORY. LET'S CREATE THE DISTRIBUTION."
+      ],
+      "formCount": 1,
+      "mediaNote": null,
+      "evidenceDir": "source/index",
+      "capturedAt": "2026-11-07T21:56:32.192Z",
+      "capturedFingerprint": "56057ddefb45cd96a6c18d9830f0b1a2",
+      "evidenceFile": "evidence/routes/index.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [
+        1024
+      ],
+      "interactiveStateCount": 38,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:03:02.846Z",
+      "verificationEvidence": {
+        "status": "review",
+        "evidenceFile": "evidence/routes/index.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/",
+            "expectedRoute": "/",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/",
+            "expectedRoute": "/",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/",
+            "expectedRoute": "/",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 20,
+            "visible": 20,
+            "internal": 12,
+            "external": 0,
+            "inPageAnchors": 8,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "pass",
+          "toggle": "mobile-nav",
+          "destination": "/case-studies/ai-founder",
+          "expected": "/case-studies/ai-founder",
+          "summary": {
+            "total": 21,
+            "visible": 20,
+            "internal": 12,
+            "external": 0,
+            "inPageAnchors": 9,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "message": "Mobile navigation reached its local destination."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/case-studies/ai-founder",
+          "destination": "/case-studies/ai-founder",
+          "backRoute": "/",
+          "forwardRoute": "/case-studies/ai-founder",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [
+          {
+            "category": "geometry",
+            "viewport": "desktop",
+            "message": "Geometry has 1 review section(s)."
+          },
+          {
+            "category": "geometry",
+            "viewport": "tablet",
+            "message": "Geometry has 1 review section(s)."
+          },
+          {
+            "category": "geometry",
+            "viewport": "mobile",
+            "message": "Geometry has 1 review section(s)."
+          }
+        ],
+        "notes": []
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/case-studies/advisory-ceo",
+      "canonicalUrl": "https://revenuemedialab.com/case-studies/advisory-ceo",
+      "localRoute": "/case-studies/advisory-ceo",
+      "title": "How we wrote tweets for a busy CEO without ever interviewing them | Revenue Media Lab",
+      "routeType": "nested",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/",
+          "url": "https://revenuemedialab.com/",
+          "label": "REVENUE MEDIA LAB",
+          "region": "header",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "5e1c96bb1eef7af999cf7198768918dd",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "How we wrote tweets for a busy CEO without ever interviewing them",
+        "Results",
+        "Where we started",
+        "How we thought through the solution",
+        "Our process",
+        "1. Listed every place they already talk",
+        "2. Studied their top tweets",
+        "3. Figured out their core values",
+        "4. Used a remixing checklist",
+        "5. Put the source next to every tweet",
+        "6. Added specific details to generic tweets",
+        "7. Used psychology and rhetorical devices",
+        "8. Used proven hooks and wrote 3 first lines for every tweet",
+        "9. Had them approve tweets in the doc",
+        "10. Said the same idea in different ways",
+        "End state",
+        "Want your founder's ideas on X without the interviews?",
+        "Read another case study"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/case-studies/advisory-ceo",
+      "capturedAt": "2026-11-07T21:56:45.005Z",
+      "capturedFingerprint": "5e1c96bb1eef7af999cf7198768918dd",
+      "evidenceFile": "evidence/routes/case-studies/advisory-ceo.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [
+        1024
+      ],
+      "interactiveStateCount": 15,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:03:20.335Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/case-studies/advisory-ceo.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/advisory-ceo",
+            "expectedRoute": "/case-studies/advisory-ceo",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/advisory-ceo",
+            "expectedRoute": "/case-studies/advisory-ceo",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/advisory-ceo",
+            "expectedRoute": "/case-studies/advisory-ceo",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 15,
+            "visible": 15,
+            "internal": 15,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "pass",
+          "toggle": "mobile-nav",
+          "destination": "/",
+          "expected": "/",
+          "summary": {
+            "total": 16,
+            "visible": 15,
+            "internal": 16,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "message": "Mobile navigation reached its local destination."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/case-studies/advisory-ceo",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": []
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/case-studies/ai-founder",
+      "canonicalUrl": "https://revenuemedialab.com/case-studies/ai-founder",
+      "localRoute": "/case-studies/ai-founder",
+      "title": "How we grew a founder's LinkedIn from 19,000 to 33,544 followers | Revenue Media Lab",
+      "routeType": "nested",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/",
+          "url": "https://revenuemedialab.com/",
+          "label": "REVENUE MEDIA LAB",
+          "region": "header",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "b5909c73a82d95bf0ad6a9e44636e5a1",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "How we grew a founder's LinkedIn from 19,000 to 33,544 followers in about 2 months",
+        "Before us, his best posts came from big life moments years apart",
+        "The system: 6 steps, from research to the week after a hit",
+        "1. The Founder Cheatsheet: one questionnaire instead of weekly interviews",
+        "2. The Remix Rule: turn old posts into new ones",
+        "3. The 3-Rank Idea Bank: know what to write next and how to write it",
+        "4. Lesson, Story, Number: give each one-liner proof only the founder has",
+        "5. Write 15, Post 10: cut the points anyone else could have written",
+        "6. Use the Accordion Method: reach new people with a hit, then keep them with the founder's story",
+        "Want your founder's next post to beat their best one?",
+        "Read another case study"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/case-studies/ai-founder",
+      "capturedAt": "2026-11-07T21:56:55.320Z",
+      "capturedFingerprint": "b5909c73a82d95bf0ad6a9e44636e5a1",
+      "evidenceFile": "evidence/routes/case-studies/ai-founder.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [
+        1024
+      ],
+      "interactiveStateCount": 15,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:03:35.453Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/case-studies/ai-founder.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/ai-founder",
+            "expectedRoute": "/case-studies/ai-founder",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/ai-founder",
+            "expectedRoute": "/case-studies/ai-founder",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/ai-founder",
+            "expectedRoute": "/case-studies/ai-founder",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 15,
+            "visible": 15,
+            "internal": 15,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "pass",
+          "toggle": "mobile-nav",
+          "destination": "/",
+          "expected": "/",
+          "summary": {
+            "total": 16,
+            "visible": 15,
+            "internal": 16,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "message": "Mobile navigation reached its local destination."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/case-studies/ai-founder",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": []
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/case-studies/sales-academy-founder",
+      "canonicalUrl": "https://revenuemedialab.com/case-studies/sales-academy-founder",
+      "localRoute": "/case-studies/sales-academy-founder",
+      "title": "How we grew an 8-figure founder's LinkedIn to 20,000 followers in under 6 months | Revenue Media Lab",
+      "routeType": "nested",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/",
+          "url": "https://revenuemedialab.com/",
+          "label": "REVENUE MEDIA LAB",
+          "region": "header",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "a15f9fc72f8bbaeae14d652511701acb",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "How we grew an 8-figure founder's LinkedIn to 20,000 followers in under 6 months",
+        "Results",
+        "Where the account started",
+        "Our strategy",
+        "Our process",
+        "1. Made a reintroduction post",
+        "2. Turned her best Instagram videos into LinkedIn posts",
+        "3. Posted opinions that go against a common belief",
+        "4. Posted about her personal life",
+        "5. Wrote 3 hooks for every post and picked the best one",
+        "6. Wrote the way she talks",
+        "7. Reran the posts that did well",
+        "End state",
+        "Your founder already has the audience somewhere. Let's bring it to LinkedIn.",
+        "Read another case study"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/case-studies/sales-academy-founder",
+      "capturedAt": "2026-11-07T21:57:06.701Z",
+      "capturedFingerprint": "a15f9fc72f8bbaeae14d652511701acb",
+      "evidenceFile": "evidence/routes/case-studies/sales-academy-founder.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [
+        1024
+      ],
+      "interactiveStateCount": 15,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:03:54.867Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/case-studies/sales-academy-founder.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/sales-academy-founder",
+            "expectedRoute": "/case-studies/sales-academy-founder",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/sales-academy-founder",
+            "expectedRoute": "/case-studies/sales-academy-founder",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/sales-academy-founder",
+            "expectedRoute": "/case-studies/sales-academy-founder",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 15,
+            "visible": 15,
+            "internal": 15,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "pass",
+          "toggle": "mobile-nav",
+          "destination": "/",
+          "expected": "/",
+          "summary": {
+            "total": 16,
+            "visible": 15,
+            "internal": 16,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "message": "Mobile navigation reached its local destination."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/case-studies/sales-academy-founder",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": []
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/case-studies/software-founder",
+      "canonicalUrl": "https://revenuemedialab.com/case-studies/software-founder",
+      "localRoute": "/case-studies/software-founder",
+      "title": "How we got a busy founder 3x more posts over 100K impressions | Revenue Media Lab",
+      "routeType": "nested",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/",
+          "url": "https://revenuemedialab.com/",
+          "label": "REVENUE MEDIA LAB",
+          "region": "header",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "nav",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "61d4aa26d6c74f56d8fff40d93967ea3",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "How we got a busy founder 3x more posts over 100K impressions without any interviews",
+        "The founder had 138K followers on X and no time for interviews",
+        "We built the system around the founder's own rule, \"test, then invest\"",
+        "1. We spent 50 hours researching the founder before we started",
+        "2. Our Hall of Fame turned a 2019 post into 11.1M impressions",
+        "3. We wrote down the founder's core ideas, and one thread that used 4 of them did 1M impressions",
+        "4. We created hook templates from posts that were already winning",
+        "5. One credibility line helped take a career post from 43,908 to 1.6M impressions",
+        "6. We battle-tested 3 hooks for every post after one thread flopped",
+        "7. New hooks turned a 10,086-impression post into 225,228",
+        "Want this system for your founder?",
+        "Read another case study"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/case-studies/software-founder",
+      "capturedAt": "2026-11-07T21:57:16.910Z",
+      "capturedFingerprint": "61d4aa26d6c74f56d8fff40d93967ea3",
+      "evidenceFile": "evidence/routes/case-studies/software-founder.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [
+        1024
+      ],
+      "interactiveStateCount": 15,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:04:11.167Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/case-studies/software-founder.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/software-founder",
+            "expectedRoute": "/case-studies/software-founder",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/software-founder",
+            "expectedRoute": "/case-studies/software-founder",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/case-studies/software-founder",
+            "expectedRoute": "/case-studies/software-founder",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 15,
+            "visible": 15,
+            "internal": 15,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "pass",
+          "toggle": "mobile-nav",
+          "destination": "/",
+          "expected": "/",
+          "summary": {
+            "total": 16,
+            "visible": 15,
+            "internal": 16,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "message": "Mobile navigation reached its local destination."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/case-studies/software-founder",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": []
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/privacy",
+      "canonicalUrl": "https://revenuemedialab.com/privacy",
+      "localRoute": "/privacy",
+      "title": "Privacy Policy — Revenue Media Lab",
+      "routeType": "page",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/terms"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/terms"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/terms"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "footer",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "footer",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "97235bef47d32578491ec5146030a30b",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "Privacy Policy",
+        "What we collect",
+        "Why we collect it",
+        "Who we share it with",
+        "Cookies and tracking",
+        "How long we keep it",
+        "Your rights",
+        "Contact"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/privacy",
+      "capturedAt": "2026-11-07T21:57:25.288Z",
+      "capturedFingerprint": "97235bef47d32578491ec5146030a30b",
+      "evidenceFile": "evidence/routes/privacy.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [],
+      "interactiveStateCount": 5,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:04:20.531Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/privacy.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/privacy",
+            "expectedRoute": "/privacy",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/privacy",
+            "expectedRoute": "/privacy",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/privacy",
+            "expectedRoute": "/privacy",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 5,
+            "visible": 5,
+            "internal": 3,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "not-applicable",
+          "message": "No visible control with aria-controls at the mobile viewport."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/privacy",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": [
+          {
+            "category": "mobile-navigation",
+            "message": "No visible control with aria-controls at the mobile viewport."
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://revenuemedialab.com/terms",
+      "canonicalUrl": "https://revenuemedialab.com/terms",
+      "localRoute": "/terms",
+      "title": "Terms of Use — Revenue Media Lab",
+      "routeType": "page",
+      "discoverySources": [
+        "html"
+      ],
+      "depth": 1,
+      "parentRoutes": [
+        "/",
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy"
+      ],
+      "childRoutes": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/privacy"
+      ],
+      "inboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/case-studies/ai-founder",
+        "https://revenuemedialab.com/case-studies/software-founder",
+        "https://revenuemedialab.com/case-studies/advisory-ceo",
+        "https://revenuemedialab.com/case-studies/sales-academy-founder",
+        "https://revenuemedialab.com/privacy"
+      ],
+      "outboundLinks": [
+        "https://revenuemedialab.com/",
+        "https://revenuemedialab.com/privacy",
+        "https://revenuemedialab.com/terms"
+      ],
+      "navigation": [
+        {
+          "href": "/privacy",
+          "url": "https://revenuemedialab.com/privacy",
+          "label": "Privacy",
+          "region": "footer",
+          "inDropdown": false,
+          "visible": true
+        },
+        {
+          "href": "/terms",
+          "url": "https://revenuemedialab.com/terms",
+          "label": "Terms",
+          "region": "footer",
+          "inDropdown": false,
+          "visible": true
+        }
+      ],
+      "discoveryStatus": "discovered",
+      "captureStatus": "captured",
+      "implementationStatus": "implemented",
+      "verificationStatus": "verified",
+      "httpStatus": 200,
+      "redirect": null,
+      "error": null,
+      "contentFingerprint": "4a1b6d550d1f5b05d62739ddd3310ea0",
+      "interactiveStates": [],
+      "confidence": "high",
+      "coverageNotes": [],
+      "blockers": [],
+      "headings": [
+        "Terms of Use",
+        "What this site is",
+        "Results and examples",
+        "Accuracy",
+        "Our content",
+        "Using the site",
+        "Liability",
+        "Contact"
+      ],
+      "formCount": 0,
+      "mediaNote": null,
+      "evidenceDir": "source/terms",
+      "capturedAt": "2026-11-07T21:57:33.653Z",
+      "capturedFingerprint": "4a1b6d550d1f5b05d62739ddd3310ea0",
+      "evidenceFile": "evidence/routes/terms.json",
+      "captureWarnings": [],
+      "breakpointsObserved": [],
+      "interactiveStateCount": 5,
+      "viewports": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "verificationCheckedAt": "2026-11-07T22:04:29.936Z",
+      "verificationEvidence": {
+        "status": "verified",
+        "evidenceFile": "evidence/routes/terms.json",
+        "direct": [
+          {
+            "name": "desktop",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/terms",
+            "expectedRoute": "/terms",
+            "error": null
+          },
+          {
+            "name": "tablet",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/terms",
+            "expectedRoute": "/terms",
+            "error": null
+          },
+          {
+            "name": "mobile",
+            "status": "pass",
+            "httpStatus": 200,
+            "finalUrl": "https://revenuemedialab.com/terms",
+            "expectedRoute": "/terms",
+            "error": null
+          }
+        ],
+        "links": {
+          "status": "pass",
+          "summary": {
+            "total": 5,
+            "visible": 5,
+            "internal": 3,
+            "external": 0,
+            "inPageAnchors": 0,
+            "broken": 0,
+            "escaped": 0,
+            "knownFailed": 0,
+            "knownExcluded": 0,
+            "knownRedirects": 0,
+            "knownUnselected": 0,
+            "knownUnresolved": 0,
+            "malformed": 0
+          },
+          "broken": [],
+          "notes": []
+        },
+        "mobileNavigation": {
+          "status": "not-applicable",
+          "message": "No visible control with aria-controls at the mobile viewport."
+        },
+        "history": {
+          "status": "pass",
+          "candidate": "/",
+          "destination": "/",
+          "backRoute": "/terms",
+          "forwardRoute": "/",
+          "message": "Back and forward return to the expected local routes."
+        },
+        "blockers": [],
+        "reviews": [],
+        "notes": [
+          {
+            "category": "mobile-navigation",
+            "message": "No visible control with aria-controls at the mobile viewport."
+          }
+        ]
+      }
+    }
+  ],
+  "excluded": [],
+  "redirects": [],
+  "unresolvedLinks": [],
+  "summary": {
+    "discovered": 7,
+    "selected": 7,
+    "failed": 0,
+    "excluded": 0,
+    "redirects": 0,
+    "unresolvedLinks": 0,
+    "implemented": 7,
+    "verified": 6,
+    "pagesFetched": 7,
+    "sitemapUrls": 0,
+    "truncated": false,
+    "limitsHit": [],
+    "durationMs": 8274,
+    "captured": 7,
+    "partial": 0,
+    "captureFailed": 0,
+    "verificationReview": 1,
+    "verificationFailed": 0,
+    "verificationBlocked": 0,
+    "verificationComplete": false
+  },
+  "methodology": [
+    "robots.txt policy and sitemap declarations",
+    "sitemap urlset and sitemapindex traversal",
+    "rendered HTML anchors from header, navigation, dropdowns, footer, sidebar, and content",
+    "bounded disclosure interactions for hidden navigation",
+    "history.pushState / replaceState / popstate observations",
+    "same-origin scope, depth, page, query, pagination, and duration limits"
+  ],
+  "mode": "exact-reconstruction"
+}

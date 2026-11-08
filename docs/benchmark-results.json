@@ -1,0 +1,720 @@
+{
+  "generatedAt": "2026-11-08T04:28:21.770Z",
+  "browser": "Chromium via Playwright 1.61.1",
+  "cases": [
+    {
+      "name": "static-multipage",
+      "sourceUrl": "http://127.0.0.1:59969/",
+      "cloneUrl": "http://127.0.0.1:59970/",
+      "out": ".benchmark/static-multipage",
+      "selected": [
+        "/",
+        "/about",
+        "/services"
+      ],
+      "timingsMs": {
+        "discovery": 6941,
+        "capture": 18991,
+        "verification": 26727,
+        "total": 52659
+      },
+      "discovery": {
+        "discovered": 18,
+        "selected": 17,
+        "failed": 1,
+        "excluded": 1,
+        "redirects": 1,
+        "unresolvedLinks": 0,
+        "implemented": 0,
+        "verified": 0,
+        "pagesFetched": 19,
+        "sitemapUrls": 6,
+        "truncated": false,
+        "limitsHit": [],
+        "durationMs": 6935,
+        "routeTypes": [
+          {
+            "type": "home",
+            "count": 1
+          },
+          {
+            "type": "page",
+            "count": 11
+          },
+          {
+            "type": "spa",
+            "count": 2
+          },
+          {
+            "type": "pagination",
+            "count": 2
+          },
+          {
+            "type": "nested",
+            "count": 2
+          }
+        ]
+      },
+      "capture": {
+        "captured": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "viewports": 9,
+        "warnings": 0
+      },
+      "verification": {
+        "routeGate": "verified",
+        "scenarioGate": "not-run",
+        "overallStatus": "review",
+        "coverage": {
+          "discovered": 18,
+          "selected": 3,
+          "captured": 3,
+          "implemented": 3,
+          "verified": 3,
+          "review": 0,
+          "failed": 0,
+          "blocked": 0,
+          "excluded": 1,
+          "unresolved": 0
+        },
+        "routes": [
+          {
+            "route": "/",
+            "type": "home",
+            "sources": [
+              "start"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/about",
+            "type": "page",
+            "sources": [
+              "sitemap",
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app/profile",
+            "type": "spa",
+            "sources": [
+              "spa-history"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app/settings",
+            "type": "spa",
+            "sources": [
+              "spa-history"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/async",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/async-target",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog?page=2",
+            "type": "pagination",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog?page=3",
+            "type": "pagination",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/contact",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/missing",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "failed",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 404
+          },
+          {
+            "route": "/portfolio",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/privacy",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services/automation",
+            "type": "nested",
+            "sources": [
+              "dropdown"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services/web-design",
+            "type": "nested",
+            "sources": [
+              "dropdown"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/sitemap-only",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "name": "spa",
+      "sourceUrl": "http://127.0.0.1:60181/",
+      "cloneUrl": "http://127.0.0.1:60182/",
+      "out": ".benchmark/spa",
+      "selected": [
+        "/app",
+        "/app/profile",
+        "/app/settings"
+      ],
+      "timingsMs": {
+        "discovery": 6697,
+        "capture": 17846,
+        "verification": 24438,
+        "total": 48981
+      },
+      "discovery": {
+        "discovered": 18,
+        "selected": 17,
+        "failed": 1,
+        "excluded": 1,
+        "redirects": 1,
+        "unresolvedLinks": 0,
+        "implemented": 0,
+        "verified": 0,
+        "pagesFetched": 19,
+        "sitemapUrls": 6,
+        "truncated": false,
+        "limitsHit": [],
+        "durationMs": 6685,
+        "routeTypes": [
+          {
+            "type": "home",
+            "count": 1
+          },
+          {
+            "type": "page",
+            "count": 11
+          },
+          {
+            "type": "spa",
+            "count": 2
+          },
+          {
+            "type": "pagination",
+            "count": 2
+          },
+          {
+            "type": "nested",
+            "count": 2
+          }
+        ]
+      },
+      "capture": {
+        "captured": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "viewports": 9,
+        "warnings": 0
+      },
+      "verification": {
+        "routeGate": "verified",
+        "scenarioGate": "not-run",
+        "overallStatus": "review",
+        "coverage": {
+          "discovered": 18,
+          "selected": 3,
+          "captured": 3,
+          "implemented": 3,
+          "verified": 3,
+          "review": 0,
+          "failed": 0,
+          "blocked": 0,
+          "excluded": 1,
+          "unresolved": 0
+        },
+        "routes": [
+          {
+            "route": "/",
+            "type": "home",
+            "sources": [
+              "start"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/about",
+            "type": "page",
+            "sources": [
+              "sitemap",
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app/profile",
+            "type": "spa",
+            "sources": [
+              "spa-history"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/app/settings",
+            "type": "spa",
+            "sources": [
+              "spa-history"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/async",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/async-target",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog?page=2",
+            "type": "pagination",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/blog?page=3",
+            "type": "pagination",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/contact",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/missing",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "failed",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 404
+          },
+          {
+            "route": "/portfolio",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/privacy",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services/automation",
+            "type": "nested",
+            "sources": [
+              "dropdown"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/services/web-design",
+            "type": "nested",
+            "sources": [
+              "dropdown"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/sitemap-only",
+            "type": "page",
+            "sources": [
+              "sitemap"
+            ],
+            "discovery": "discovered",
+            "capture": "pending",
+            "verification": "unverified",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "name": "large-responsive",
+      "sourceUrl": "https://revenuemedialab.com/",
+      "cloneUrl": "http://127.0.0.1:4336/",
+      "out": ".benchmark/large-responsive",
+      "selected": [
+        "/",
+        "/case-studies/advisory-ceo",
+        "/case-studies/ai-founder",
+        "/case-studies/sales-academy-founder",
+        "/case-studies/software-founder",
+        "/privacy",
+        "/terms"
+      ],
+      "timingsMs": {
+        "discovery": 7145,
+        "capture": 78692,
+        "verification": 89234,
+        "total": 175071
+      },
+      "discovery": {
+        "discovered": 7,
+        "selected": 7,
+        "failed": 0,
+        "excluded": 0,
+        "redirects": 0,
+        "unresolvedLinks": 0,
+        "implemented": 0,
+        "verified": 0,
+        "pagesFetched": 7,
+        "sitemapUrls": 0,
+        "truncated": false,
+        "limitsHit": [],
+        "durationMs": 7137,
+        "routeTypes": [
+          {
+            "type": "home",
+            "count": 1
+          },
+          {
+            "type": "nested",
+            "count": 4
+          },
+          {
+            "type": "page",
+            "count": 2
+          }
+        ]
+      },
+      "capture": {
+        "captured": 7,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "viewports": 21,
+        "warnings": 0
+      },
+      "verification": {
+        "routeGate": "verified",
+        "scenarioGate": "not-run",
+        "overallStatus": "review",
+        "coverage": {
+          "discovered": 7,
+          "selected": 7,
+          "captured": 7,
+          "implemented": 7,
+          "verified": 7,
+          "review": 0,
+          "failed": 0,
+          "blocked": 0,
+          "excluded": 0,
+          "unresolved": 0
+        },
+        "routes": [
+          {
+            "route": "/",
+            "type": "home",
+            "sources": [
+              "start"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/case-studies/advisory-ceo",
+            "type": "nested",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/case-studies/ai-founder",
+            "type": "nested",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/case-studies/sales-academy-founder",
+            "type": "nested",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/case-studies/software-founder",
+            "type": "nested",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/privacy",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          },
+          {
+            "route": "/terms",
+            "type": "page",
+            "sources": [
+              "html"
+            ],
+            "discovery": "discovered",
+            "capture": "captured",
+            "verification": "verified",
+            "httpStatus": 200
+          }
+        ]
+      }
+    }
+  ]
+}

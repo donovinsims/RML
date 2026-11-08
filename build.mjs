@@ -1,11 +1,10 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
-import { dirname, extname, join } from "node:path";
+import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = dirname(HERE);
-const MANIFEST_PATH = process.env.MANIFEST || join(ROOT, ".tmp-benchmark/rml-fixed/evidence/routes.json");
+const MANIFEST_PATH = process.env.MANIFEST || join(HERE, "capture/evidence/routes.json");
 const OUT = process.env.OUT || join(HERE, "site");
 const manifest = JSON.parse(await readFile(MANIFEST_PATH, "utf8"));
 const sourceRoot = dirname(dirname(MANIFEST_PATH));
@@ -110,7 +109,7 @@ async function fetchAsset(raw) {
   if (assetCache.has(absolute.href)) return assetCache.get(absolute.href);
   const response = await fetch(absolute, {
     headers: {
-      "user-agent": "PixelPerfectClone/3.0",
+      "user-agent": "RMLBenchmark/1.0",
       accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,text/css,font/woff2,*/*;q=0.8",
       referer: sourceOrigin + "/",
     },
@@ -133,7 +132,7 @@ async function processCss(raw) {
   const absolute = new URL(decoded, sourceOrigin);
   if (assetCache.has(absolute.href)) return assetCache.get(absolute.href);
   const response = await fetch(absolute, {
-    headers: { "user-agent": "PixelPerfectClone/3.0", accept: "text/css,*/*;q=0.8", referer: sourceOrigin + "/" },
+    headers: { "user-agent": "RMLBenchmark/1.0", accept: "text/css,*/*;q=0.8", referer: sourceOrigin + "/" },
   });
   if (!response.ok) throw new Error(`HTTP ${response.status} for ${absolute.href}`);
   let css = await response.text();
@@ -232,8 +231,8 @@ for (const route of manifest.routes) {
 }
 
 const report = {
-  kind: "pixel-perfect-reconstruction",
-  sourceManifest: MANIFEST_PATH,
+  kind: "rml-reconstruction",
+  sourceManifest: MANIFEST_PATH.startsWith(HERE) ? relative(HERE, MANIFEST_PATH) : MANIFEST_PATH,
   sourceOrigin,
   generatedAt: new Date().toISOString(),
   durationMs: Date.now() - startedAt,

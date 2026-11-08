@@ -1,0 +1,22 @@
+{
+  "name": "rml-reconstruction",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone Revenue Media Lab reconstruction with responsive and benchmark verification.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "audit": "node scripts/audit-all.mjs",
+    "benchmark": "node benchmark/run.mjs"
+  },
+  "dependencies": {
+    "pixelmatch": "7.2.0",
+    "playwright": "1.61.1",
+    "pngjs": "7.0.0"
+  }
+}

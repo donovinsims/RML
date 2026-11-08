@@ -1,48 +1,83 @@
 # Revenue Media Lab reconstruction
 
-A static, evidence-backed reconstruction of <https://revenuemedialab.com/>, captured and built on 2026-11-08. The source runtime has been removed; the seven routes are local HTML with localized CSS, fonts, and media, plus a source-derived motion layer.
+A standalone static reconstruction of <https://revenuemedialab.com/>, built from the frozen capture in `capture/` and verified from this repository alone. The source application scripts are removed; the seven routes are local HTML with localized CSS, fonts, and media, plus a source-derived motion layer and static fallbacks.
 
-## Serve
+## Quick start
 
 ```bash
-node serve.mjs
+npm install
+PLAYWRIGHT_BROWSERS_PATH="$PWD/.pw-browsers" npx playwright install chromium
+npm run build
+npm run serve
 # http://127.0.0.1:4310
 ```
 
-Set `PORT` to use another port. The checked-in site is in `site/`; `serve.mjs` serves it with directory-index and route fallbacks. No npm install is required.
+Set `PORT` to serve on another port. The checked-in `site/` is already built and can be served without rebuilding. `npm install` is only needed for rebuilding, tests, and audits.
+
+## Commands
+
+```bash
+npm run build       # rebuild site/ from capture/evidence/routes.json
+npm run serve       # serve site/ on http://127.0.0.1:4310
+npm test            # pipe geometry, structural matching, and static controls
+npm run audit       # live 11-width responsive audit plus 9-width pipe comparison
+npm run benchmark   # fixture and authorized-source discovery/capture/verification
+```
+
+The browser commands use the local Chromium installation:
+
+```bash
+export PLAYWRIGHT_BROWSERS_PATH="$PWD/.pw-browsers"
+npm test
+npm run audit
+npm run benchmark
+```
+
+`npm run audit` starts the local site server itself. `npm test` starts a separate site server on port 4328. `npm run benchmark` starts fixture servers and a local clone server, then writes measured evidence to `.benchmark/` and a compact committed summary to `docs/benchmark-results.json`. The external leg fetches `https://revenuemedialab.com/`; it requires network access and uses only that authorized origin.
 
 ## Layout
 
 - `site/` — the built seven-route site, including 393 local assets.
-- `build.mjs` — rebuilds `site/` from a frozen source capture.
+- `capture/` — frozen source route HTML and the manifest used by `build.mjs` and the audit.
+- `build.mjs` — rebuilds `site/` from the frozen capture, localizing referenced assets from the authorized source.
 - `runtime.js`, `motion.js`, `easing.js` — navigation/controls, scroll-driven motion, and sampled source easings.
 - `pipe-geometry.js`, `pipe-render.js` — source-derived responsive pipe geometry and SVG rendering.
-- `evidence/` — source pipe snapshots retained as supporting evidence.
-- `build-report.json` — page and asset counts from the checked-in build.
+- `lib/` — the vendored browser capture, screenshot comparison, discovery, and verification helpers used by local scripts.
+- `benchmark/` — standalone benchmark runner, deterministic multipage/SPA fixture, and the vendored workflow under `benchmark/workflow/`.
+- `scripts/` — responsive audit and live pipe-geometry comparison.
+- `tests/` — golden geometry, structural matcher, and static-fallback regression tests.
+- `docs/` — benchmark report and compact measured results.
+- `build-report.json` — page, asset, and failure counts from the checked-in build.
 
 ## Verification
 
-The reconstruction was verified against the live source and the frozen capture before extraction:
+The checked-in build is produced from `capture/` with:
 
-- **7/7** routes load directly with working links and history; **6/7 verified, 1 review, 0 failed/blocked**. The review is the homepage's known empty-text geometry wrapper.
-- **77/77** responsive checks pass at 11 widths, with **21/21** primary screenshots at 640, 1024, and 1180 exact.
-- **9/9** live geometry widths match exactly: 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px.
-- **12/12** motion baselines are pinned; all reduced-motion states are pixel-exact, and the largest no-preference residual is **0.8263%** on the mobile post card from split transform rasterization.
-- The full toolkit suite passed **64/64**, and the reconstruction tests passed **5/5**.
-- The instant-jump trigger gate is **±25 ms**, enforced by the parent toolkit over three timing runs per state. Final medians: desktop **807.8/816.6 ms** (source/clone, +8.8 ms), mobile first card **458.0/457.7 ms** (−0.3 ms), and mobile second card **458.1/457.6 ms** (−0.5 ms). The widest per-origin spread was **8.4 ms**; the old section-trigger behavior fails the gate by **345.6 ms**.
-
-Tablet/intermediate motion profiles were intentionally omitted; those widths are covered by the geometry comparison and responsive audit, not by motion screenshots or timing samples.
+- **7** routes, **393** localized assets, **9,697,279** asset bytes, and **0** build failures.
+- **3/3** local regression tests passing.
+- **77/77** responsive checks passing across seven routes and eleven widths, including the pipe-geometry widths 390, 500, 640, 768, 900, 1024, 1100, 1180, and 1440 px. All **21/21** primary screenshots at 640, 1024, and 1180 are exact; page-height delta and horizontal overflow are zero.
+- **9/9** live pipe-geometry checks passing with exact main paths, taps, valve positions, rail, manifold offsets, modes, and stage colors.
+- The home page's static fallbacks are exercised directly: the logo strip starts at scroll position 0 with its fade mask and horizontal access, FAQ accordions open and close, mobile result dots move the carousel, the mobile menu opens and closes, and the application submit guard does not send a request.
+- Benchmark run: **13/13 selected routes verified** across a deterministic static multipage fixture (**3/3**), a deterministic SPA fixture (**3/3**), and the authorized external site (**7/7**, 21 viewport captures). **39/39 viewport captures** completed with zero warnings; the external route gate is **verified**. The overall benchmark status remains **review** because no authored interaction scenarios were run. Full results are in [docs/benchmark-report.md](docs/benchmark-report.md) and [docs/benchmark-results.json](docs/benchmark-results.json).
 
 ## Rebuild
 
-Rebuilding requires the frozen capture used for the original build, which is not included here:
+The build uses the checked-in manifest by default:
 
 ```bash
-MANIFEST=/path/to/frozen/evidence/routes.json node build.mjs
+npm run build
 ```
 
-The build reads the manifest and captured route HTML, fetches and localizes referenced assets from the authorized source, and writes `site/`. The checked-in `site/` is already built and can be served without the capture.
+To build from another frozen capture:
+
+```bash
+MANIFEST=/path/to/evidence/routes.json OUT=/path/to/site node build.mjs
+```
+
+The capture must contain `evidence/routes.json` and the corresponding `source/<route>/rendered.html` files. The build fetches and localizes referenced assets from the manifest's authorized source origin.
 
 ## Scope and rights
 
 This reconstruction was produced for authorized analysis and review. It is not affiliated with Revenue Media Lab and does not grant rights to the source's trademarks, copy, photography, or other protected assets. Do not deploy it as a production replacement.
+
+Animations are intentionally out of scope: the static logo strip is presented at a clean start position, and animated source states are not claimed. The benchmark's SPA leg is the deterministic local fixture because no external client-rendered SPA was authorized. See the benchmark report for the full scope and review boundaries.

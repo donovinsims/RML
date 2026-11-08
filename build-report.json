@@ -1,9 +1,9 @@
 {
-  "kind": "pixel-perfect-reconstruction",
-  "sourceManifest": "frozen source capture (not included in this repository)",
+  "kind": "rml-reconstruction",
+  "sourceManifest": "capture/evidence/routes.json",
   "sourceOrigin": "https://revenuemedialab.com",
-  "generatedAt": "2026-11-08T03:24:15.725Z",
-  "durationMs": 48250,
+  "generatedAt": "2026-11-08T04:23:31.596Z",
+  "durationMs": 47749,
   "pages": [
     {
       "route": "/",

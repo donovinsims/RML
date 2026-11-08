@@ -27,6 +27,18 @@ function setupMobileMenu() {
   });
 }
 
+function setupStaticMarquee() {
+  const marquee = document.querySelector(".marquee");
+  const track = marquee?.querySelector(".marquee-track");
+  if (!marquee || !track) return;
+  // The source marquee is intentionally paused in this static reconstruction.
+  // Keep its fade mask, expose horizontal access, and start at the clean edge.
+  marquee.style.overflowX = "auto";
+  track.style.animation = "none";
+  track.style.transform = "none";
+  marquee.scrollLeft = 0;
+}
+
 function setupFaq() {
   const buttons = document.querySelectorAll('#faq button[aria-controls][aria-expanded]');
   for (const button of buttons) {
@@ -131,6 +143,7 @@ function setupPipe() {
 
 function init() {
   setupMobileMenu();
+  setupStaticMarquee();
   setupFaq();
   setupResultDots();
   setupFormGuard();
