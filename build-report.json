@@ -1,0 +1,54 @@
+{
+  "kind": "pixel-perfect-reconstruction",
+  "sourceManifest": "frozen source capture (not included in this repository)",
+  "sourceOrigin": "https://revenuemedialab.com",
+  "generatedAt": "2026-11-08T03:24:15.725Z",
+  "durationMs": 48250,
+  "pages": [
+    {
+      "route": "/",
+      "file": "index.html",
+      "bytes": 72415,
+      "assets": 59
+    },
+    {
+      "route": "/case-studies/advisory-ceo",
+      "file": "case-studies/advisory-ceo/index.html",
+      "bytes": 43210,
+      "assets": 81
+    },
+    {
+      "route": "/case-studies/ai-founder",
+      "file": "case-studies/ai-founder/index.html",
+      "bytes": 30810,
+      "assets": 89
+    },
+    {
+      "route": "/case-studies/sales-academy-founder",
+      "file": "case-studies/sales-academy-founder/index.html",
+      "bytes": 39320,
+      "assets": 89
+    },
+    {
+      "route": "/case-studies/software-founder",
+      "file": "case-studies/software-founder/index.html",
+      "bytes": 30252,
+      "assets": 97
+    },
+    {
+      "route": "/privacy",
+      "file": "privacy/index.html",
+      "bytes": 8308,
+      "assets": 9
+    },
+    {
+      "route": "/terms",
+      "file": "terms/index.html",
+      "bytes": 7577,
+      "assets": 9
+    }
+  ],
+  "assets": 393,
+  "assetBytes": 9697279,
+  "failures": []
+}
